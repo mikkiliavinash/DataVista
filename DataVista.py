@@ -27,7 +27,8 @@ if uploaded_file is not None:
         "Column_Name": df.columns,
         "Distinct_Count": [df[col].nunique() for col in df.columns],
         "Total_Count": [df[col].count() for col in df.columns],
-        "Data_Type": [df[col].dtype for col in df.columns]
+        "Data_Type": [df[col].dtype for col in df.columns],
+        "Nulls":[df[col].isnull().sum() for col in df.columns]
     }
 
      # Show dataset summary
